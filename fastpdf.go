@@ -34,7 +34,7 @@ type FastPdf struct {
 	//AddText      (PdfItem) //添加文本
 }
 
-// 新建一个PDF
+// 新建F
 func New(fontPath, templatePath string) FastPdf {
 	gp := gopdf.GoPdf{}
 	gp.Start(gopdf.Config{PageSize: *gopdf.PageSizeA4}) //595.28, 841.89 = A4
