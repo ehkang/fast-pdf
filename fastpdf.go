@@ -32,14 +32,14 @@ type FastPdf struct {
 }
 
 // 新建F
-func New(fontPath string, fastPdf FastPdf) FastPdf {
+func New(fontPath string) FastPdf {
 	gp := gopdf.GoPdf{}
 	gp.Start(gopdf.Config{PageSize: *gopdf.PageSizeA4}) //595.28, 841.89 = A4
 	err := gp.AddTTFFont("font", fontPath)
 	if err != nil {
 		log.Fatalln(err)
 	}
-	fastPdf.gopdf = &gp
+	fastPdf :=FastPdf{gopdf : &gp}
 	fastPdf.newPage() //创建第一页
 	return fastPdf
 }
